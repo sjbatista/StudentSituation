@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -14,8 +16,14 @@ class MainActivity : AppCompatActivity() {
 
         val btnCalculate = buttonCalculate
         val txtResult = result
-
+        var testNumberOfClicks=0
         btnCalculate.setOnClickListener {
+            try {
+                val list1 = listOf(123)
+                val a=list1[6]
+            }catch (e: IndexOutOfBoundsException){
+                val a=0
+            }
             val scoreOne = Integer.parseInt(scoreStudent1.text.toString())
             val scoreTwo = Integer.parseInt(scoreStudent2.text.toString())
             val media = (scoreOne+scoreTwo)/2
